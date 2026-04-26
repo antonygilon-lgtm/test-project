@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Calculator</title>
+    <meta name="description" content="A sleek, premium calculator with glassmorphism design.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    <div class="glass-container">
+        <div class="calculator">
+            <div class="display-container">
+                <div id="previous-operand" class="previous-operand"></div>
+                <div id="current-operand" class="current-operand">0</div>
+            </div>
+            <div class="buttons">
+                <button id="btn-clear" class="btn btn-special" onclick="clearDisplay()">C</button>
+                <button id="btn-plus-minus" class="btn btn-special" onclick="toggleSign()">+/-</button>
+                <button id="btn-percent" class="btn btn-special" onclick="percent()">%</button>
+                <button id="btn-divide" class="btn btn-operator" onclick="appendOperator('/')">÷</button>
+                
+                <button id="btn-7" class="btn" onclick="appendNumber('7')">7</button>
+                <button id="btn-8" class="btn" onclick="appendNumber('8')">8</button>
+                <button id="btn-9" class="btn" onclick="appendNumber('9')">9</button>
+                <button id="btn-multiply" class="btn btn-operator" onclick="appendOperator('*')">×</button>
+                
+                <button id="btn-4" class="btn" onclick="appendNumber('4')">4</button>
+                <button id="btn-5" class="btn" onclick="appendNumber('5')">5</button>
+                <button id="btn-6" class="btn" onclick="appendNumber('6')">6</button>
+                <button id="btn-subtract" class="btn btn-operator" onclick="appendOperator('-')">−</button>
+                
+                <button id="btn-1" class="btn" onclick="appendNumber('1')">1</button>
+                <button id="btn-2" class="btn" onclick="appendNumber('2')">2</button>
+                <button id="btn-3" class="btn" onclick="appendNumber('3')">3</button>
+                <button id="btn-add" class="btn btn-operator" onclick="appendOperator('+')">+</button>
+                
+                <button id="btn-0" class="btn btn-zero" onclick="appendNumber('0')">0</button>
+                <button id="btn-dot" class="btn" onclick="appendNumber('.')">.</button>
+                <button id="btn-equals" class="btn btn-operator btn-equals" onclick="compute()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

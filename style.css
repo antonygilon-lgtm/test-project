@@ -1,0 +1,183 @@
+:root {
+    --bg-color: #0f172a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-color: #f8fafc;
+    --accent-neon: #38bdf8;
+    --operator-neon: #f472b6;
+    --special-neon: #a78bfa;
+    --btn-hover: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+/* Background Gradient Orbs */
+.background-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(244, 114, 182, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(167, 139, 250, 0.1) 0%, transparent 60%);
+}
+
+.glass-container {
+    position: relative;
+    z-index: 1;
+}
+
+.calculator {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 360px;
+}
+
+.display-container {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
+    text-align: right;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.previous-operand {
+    color: rgba(248, 250, 204, 0.5);
+    font-size: 1.1rem;
+    min-height: 1.5rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.current-operand {
+    font-size: 2.5rem;
+    font-weight: 600;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    height: 64px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-zero {
+    grid-column: span 1; /* Changed to 1 to keep grid uniform or span 2 if wanted */
+}
+
+/* Spanning 0 button to 2 columns looks better in some layouts, let's use standard grid for now or span 2 */
+.btn-zero {
+    grid-column: span 1;
+}
+
+/* Let's make it span 2 columns for standard calculator feel */
+.btn-zero {
+    grid-column: span 2;
+}
+
+.btn-operator {
+    background: rgba(244, 114, 182, 0.1);
+    color: var(--operator-neon);
+    border-color: rgba(244, 114, 182, 0.2);
+    font-weight: 600;
+}
+
+.btn-operator:hover {
+    background: rgba(244, 114, 182, 0.2);
+    box-shadow: 0 0 15px rgba(244, 114, 182, 0.3);
+}
+
+.btn-special {
+    background: rgba(167, 139, 250, 0.1);
+    color: var(--special-neon);
+    border-color: rgba(167, 139, 250, 0.2);
+}
+
+.btn-special:hover {
+    background: rgba(167, 139, 250, 0.2);
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
+}
+
+.btn-equals {
+    background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-equals:hover {
+    background: linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 100%);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Micro-animations */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+}
+
+/* Add a subtle glow to the container */
+.calculator {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
