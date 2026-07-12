@@ -2,7 +2,7 @@
 
 A state-of-the-art, visually captivating digital dimension showcasing advanced software engineering, AI orchestration, and futuristic web design. Built with zero-trust secure coding practices, glassmorphism aesthetics, and responsive micro-animations.
 
-🌐 **Live on GitHub Pages**: [https://antonygilon-lgtm.github.io/test-project/](https://antonygilon-lgtm.github.io/test-project/)
+🌐 **Live at Custom Domain**: [https://antonygilon.com](https://antonygilon.com) (Fallback: [https://antonygilon-lgtm.github.io/test-project/](https://antonygilon-lgtm.github.io/test-project/))
 
 ---
 
