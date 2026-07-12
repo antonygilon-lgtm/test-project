@@ -1171,8 +1171,15 @@ main {
     justify-content: flex-end;
 }
 
-/* Responsive Styles */
+/* ==========================================================================
+   Comprehensive Mobile & Tablet Responsive Styles
+   ========================================================================== */
 @media (max-width: 1024px) {
+    main {
+        padding: 100px 24px 60px;
+        gap: 80px;
+    }
+    
     .hero-section {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1186,32 +1193,238 @@ main {
 
     .hero-actions {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .stats-banner {
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
     }
 }
 
 @media (max-width: 768px) {
+    /* Navbar Mobile Adaptation */
+    .nav-container {
+        padding: 0 16px;
+    }
+
     .nav-links {
-        display: none; /* Can be expanded if needed or kept clean on mobile */
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(7, 11, 20, 0.95);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-top: 1px solid var(--border-glass);
+        padding: 12px 8px;
+        justify-content: space-around;
+        gap: 6px;
+        z-index: 1000;
+        overflow-x: auto;
     }
     
+    .nav-link {
+        font-size: 0.78rem;
+        white-space: nowrap;
+        padding: 6px 10px;
+    }
+    
+    .btn-connect {
+        padding: 6px 12px;
+        font-size: 0.78rem !important;
+    }
+
+    /* Main body padding adjustments for bottom navigation */
+    main {
+        padding: 90px 16px 90px;
+        gap: 64px;
+    }
+    
+    /* Hero adjustments */
     .hero-title {
-        font-size: 2.6rem;
+        font-size: 2.3rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.05rem;
     }
     
     .avatar-glass-ring {
-        width: 300px;
-        height: 300px;
+        width: 260px;
+        height: 260px;
+        padding: 12px;
     }
     
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+    }
+
+    /* Terminal Mobile Layout */
+    .terminal-container {
+        border-radius: 16px;
+    }
+
+    .terminal-header {
+        padding: 12px 16px;
+    }
+
+    .terminal-title {
+        font-size: 0.75rem;
+    }
+
+    .terminal-quick-chips {
+        padding: 10px 14px;
+        gap: 6px;
+    }
+
+    .cmd-chip {
+        padding: 6px 10px;
+        font-size: 0.78rem;
+    }
+
+    .terminal-body {
+        padding: 16px;
+        min-height: 250px;
+        max-height: 340px;
+        font-size: 0.85rem;
+        gap: 10px;
+    }
+
+    .terminal-input-bar {
+        padding: 12px 14px;
+        gap: 8px;
+    }
+
+    .prompt-symbol {
+        font-size: 0.85rem;
+    }
+
+    .terminal-input {
+        font-size: 0.88rem;
+    }
+
+    /* Grids stack nicely on mobile */
+    .skills-grid,
+    .projects-grid,
+    .telemetry-grid,
+    .contact-links-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .skills-filter-container {
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+
+    .project-img-wrapper {
+        height: 180px;
+    }
+
+    /* Contact Box Mobile */
     .contact-box {
-        padding: 36px 20px;
+        padding: 32px 16px;
+        gap: 24px;
     }
     
     .contact-title {
-        font-size: 2.2rem;
+        font-size: 1.9rem;
+    }
+    
+    .contact-desc {
+        font-size: 1rem;
+    }
+
+    .contact-item {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .contact-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.5rem;
+    }
+
+    .contact-value {
+        font-size: 0.9rem;
+        word-break: break-all;
+    }
+
+    /* Footer Mobile */
+    .glass-footer {
+        padding: 32px 16px 80px; /* Extra bottom padding so mobile nav bar doesn't cover */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-meta {
+        align-items: center;
+    }
+
+    /* Modal Mobile */
+    .custom-modal {
+        padding: 20px;
+        max-height: 80vh;
+    }
+
+    .modal-title-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.95rem;
+    }
+
+    .status-badge {
+        font-size: 0.72rem;
+        padding: 6px 12px;
+    }
+
+    .avatar-glass-ring {
+        width: 220px;
+        height: 220px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .terminal-quick-chips {
+        justify-content: center;
+    }
+
+    .stat-card {
+        width: 45%;
+        text-align: center;
     }
 }
