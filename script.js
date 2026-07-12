@@ -1,6 +1,7 @@
 /**
- * Antony Gilon's Space - Core Logic & Interactive OS
+ * Antony Gilon's Space - Core Logic & GilonOS v3.0 Career Terminal
  * Built with strict secure DOM manipulation principles (zero innerHTML/outerHTML).
+ * Tailored with authentic career data from Google Cloud (JAPAC) and NatWest Group.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,7 +28,7 @@ function initStarfield() {
         height = canvas.height = window.innerHeight;
     });
 
-    const numStars = 140;
+    const numStars = 150;
     const stars = [];
     let mouseX = width / 2;
     let mouseY = height / 2;
@@ -61,13 +62,11 @@ function initStarfield() {
             if (star.y < 0) star.y = height;
             if (star.y > height) star.y = 0;
 
-            // Draw star
             ctx.beginPath();
             ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
             ctx.fillStyle = `rgba(248, 250, 252, ${star.alpha})`;
             ctx.fill();
 
-            // Connect nearby stars near mouse cursor
             const dx = mouseX - star.x;
             const dy = mouseY - star.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
@@ -76,7 +75,7 @@ function initStarfield() {
                 ctx.beginPath();
                 ctx.moveTo(star.x, star.y);
                 ctx.lineTo(mouseX, mouseY);
-                const lineAlpha = (1 - dist / 130) * 0.25;
+                const lineAlpha = (1 - dist / 130) * 0.26;
                 ctx.strokeStyle = `rgba(56, 189, 248, ${lineAlpha})`;
                 ctx.lineWidth = 0.8;
                 ctx.stroke();
@@ -90,7 +89,7 @@ function initStarfield() {
 }
 
 /* ==========================================================================
-   2. GilonOS Interactive Terminal Simulator
+   2. GilonOS v3.0 Interactive Career Terminal
    ========================================================================== */
 function initTerminal() {
     const screen = document.getElementById('terminal-screen');
@@ -99,7 +98,7 @@ function initTerminal() {
 
     if (!screen || !input) return;
 
-    // Helper: Safely append line without innerHTML
+    // Safely append line without innerHTML
     function appendTerminalLine(text, className = 'response') {
         const line = document.createElement('div');
         line.className = `term-line ${className}`;
@@ -109,64 +108,76 @@ function initTerminal() {
     }
 
     // Print welcome header on load
-    appendTerminalLine('GilonOS v2.6.4 (quantum-x86_64-cosmic)', 'highlight');
-    appendTerminalLine('Type "help" or click a command chip below to begin exploration.', 'response');
+    appendTerminalLine('GilonOS v3.0.0 (google-cloud-kernel-japac) initialized.', 'highlight');
+    appendTerminalLine('Welcome! Type "help" or click a command chip below to explore my career experience.', 'response');
 
     function handleCommand(cmdString) {
         const raw = cmdString.trim();
         if (!raw) return;
 
-        appendTerminalLine(`antony@space:~$ ${raw}`, 'user-cmd');
+        appendTerminalLine(`antony@google-cloud:~$ ${raw}`, 'user-cmd');
         const lower = raw.toLowerCase();
 
         switch (lower) {
             case 'help':
-                appendTerminalLine('AVAILABLE COMMANDS:', 'highlight');
-                appendTerminalLine('  help      - Display this command reference manual.');
-                appendTerminalLine('  bio       - View Antony Gilon\'s engineering background.');
-                appendTerminalLine('  skills    - List core systems competencies & mastery metrics.');
-                appendTerminalLine('  projects  - Inspect active AI & software modules.');
-                appendTerminalLine('  status    - Run diagnostics on station vitals & security checks.');
-                appendTerminalLine('  contact   - Retrieve secure communication coordinates.');
-                appendTerminalLine('  matrix    - Initiate cosmic data stream simulation.');
-                appendTerminalLine('  clear     - Clear terminal buffer.');
+                appendTerminalLine('AVAILABLE SYSTEM COMMANDS:', 'highlight');
+                appendTerminalLine('  help        - Display this command reference manual.');
+                appendTerminalLine('  google      - View my role as Strategic Cloud Engineer @ Google Cloud (JAPAC).');
+                appendTerminalLine('  natwest     - View achievements as Java Backend Engineer @ NatWest Group.');
+                appendTerminalLine('  ai-gateway  - Inspect my AI Gateway & Model Armor security architecture.');
+                appendTerminalLine('  mcp         - Explore Model Context Protocol (MCP) servers & agentic workflows.');
+                appendTerminalLine('  awards      - Output Google Peer Bonuses & NatWest LOV Awards.');
+                appendTerminalLine('  cert        - Show Google Cloud Certifications & Anna University Education.');
+                appendTerminalLine('  matrix      - Initiate high-throughput AI telemetry simulation.');
+                appendTerminalLine('  clear       - Clear terminal buffer.');
                 break;
 
-            case 'bio':
-                appendTerminalLine('ANTONY GILON // PROFILE:', 'highlight');
-                appendTerminalLine('Role: Software Engineer, Architect & Technical Innovator.');
-                appendTerminalLine('Mission: Building autonomous AI systems, secure scalable pipelines, and high-fidelity web experiences.');
-                appendTerminalLine('Philosophy: "Simplicity in architecture, security in code, and magic in the user interface."');
+            case 'google':
+                appendTerminalLine('GOOGLE CLOUD // STRATEGIC CLOUD ENGINEER (08/2025 - PRESENT):', 'highlight');
+                appendTerminalLine('Location: Bangalore, India | Team: Global Services Delivery (JAPAC)');
+                appendTerminalLine('Role Profile: Customer & Partner Technical Solutions Engineer specializing in API Management & AI Gateways.');
+                appendTerminalLine('  [+] SGX (Cloud Architect): Built async Cloud Run + BigQuery compose pipeline tree-merging GCS shards; 10 App Integration flows & 10 Apigee proxies; automated Terraform IaC.');
+                appendTerminalLine('  [+] GPN (AI Gateway Architect): Semantic caching cutting upstream API costs; standalone MCP servers for agent-to-tool comms; custom JS safety policies within Apigee extending Model Armor.');
+                appendTerminalLine('  [+] Prudential (AI Gateway Architect): Multi-tenant perimeter for enterprise LLM traffic; specialized Apigee proxies for MCP tools; Sensitive Data Protection (SDP) PII redaction; out-of-the-box Model Armor prompt sanitization.');
                 break;
 
-            case 'skills':
-                appendTerminalLine('TECHNICAL MASTERY INDEX:', 'highlight');
-                appendTerminalLine('  [+] Distributed Systems Architecture (95%)');
-                appendTerminalLine('  [+] Agentic AI & Neural Orchestration (96%)');
-                appendTerminalLine('  [+] Secure Web Backend & BFF Hardening (98%)');
-                appendTerminalLine('  [+] Python, Go & TypeScript Server Engineering (94%)');
-                appendTerminalLine('  [+] Modern Glassmorphism & UI/UX Design (92%)');
+            case 'natwest':
+                appendTerminalLine('NATWEST GROUP // JAVA BACKEND SOFTWARE ENGINEER (07/2021 - 2025):', 'highlight');
+                appendTerminalLine('Location: Chennai, India');
+                appendTerminalLine('  [+] Automated report generation with Spring Scheduler & multithreading, reducing manual effort by 2-3 days.');
+                appendTerminalLine('  [+] Built REST endpoints using Spring Boot deployed on AWS EKS & EC2 with MongoDB aggregation scripts.');
+                appendTerminalLine('  [+] Developed Customer Verification API with 100% JUnit test coverage and onboarded 10+ APIs to Apigee.');
+                appendTerminalLine('  [+] Built Google Custom Search microservice (< 300ms latency) and generic OpenAI chatbot endpoint.');
+                appendTerminalLine('  [+] Automated migration of over 250 project repositories from Bitbucket to GitLab.');
+                appendTerminalLine('  [+] Upgraded systems to remediate critical vulnerabilities (Log4j) & resolved PROD incidents.');
                 break;
 
-            case 'projects':
-                appendTerminalLine('ACTIVE EXPEDITIONS:', 'highlight');
-                appendTerminalLine('  01. Autonomous AI Agent Hub - Multi-agent orchestration framework.');
-                appendTerminalLine('  02. Premium Glassmorphism Calculator - Sleek CSS/JS interactive tool.');
-                appendTerminalLine('  03. SecureCoder Zero-Trust Pipeline - Automated vulnerability prevention.');
+            case 'ai-gateway':
+                appendTerminalLine('ENTERPRISE AI GATEWAY ARCHITECTURE BLUEPRINT:', 'highlight');
+                appendTerminalLine('  1. Ingress Layer: Apigee API Gateway enforcing OAuth 2.0, mTLS, and rate-limiting.');
+                appendTerminalLine('  2. Data Privacy: Google Cloud SDP automatically detecting and redacting PII before LLM dispatch.');
+                appendTerminalLine('  3. Prompt Security: Model Armor out-of-the-box and custom JS policies blocking prompt injections.');
+                appendTerminalLine('  4. Performance: Semantic caching catching high-intent queries, slashing latency and upstream costs.');
                 break;
 
-            case 'status':
-                appendTerminalLine('RUNNING STATION DIAGNOSTICS...', 'highlight');
-                appendTerminalLine('  [OK] Quantum Kernel Vitals: NORMAL');
-                appendTerminalLine('  [OK] CSP & XSS Shielding: ACTIVE (Zero-Trust Mode)');
-                appendTerminalLine('  [OK] Neural Memory Latency: 0.84ms');
-                appendTerminalLine('  [OK] SSL/TLS Interstellar Encryption: ENABLED');
+            case 'mcp':
+                appendTerminalLine('MODEL CONTEXT PROTOCOL (MCP) & AGENTIC ORCHESTRATION:', 'highlight');
+                appendTerminalLine('  [+] Developed custom, standalone MCP servers to execute autonomous agent-to-tool & agent-to-agent communication patterns.');
+                appendTerminalLine('  [+] Built specialized Apigee proxies to securely expose, throttle, and govern MCP tools for client applications.');
+                appendTerminalLine('  [+] Designed gateway governance with real-time token rate-limiting, dynamic routing, and payload logging.');
                 break;
 
-            case 'contact':
-                appendTerminalLine('ESTABLISH COMM TRANSMISSION:', 'highlight');
-                appendTerminalLine('  GitHub: https://github.com/antonygilon-lgtm');
-                appendTerminalLine('  Email:  antonygilon@google.com');
+            case 'awards':
+                appendTerminalLine('HONORS, PEER BONUSES & RECOGNITION:', 'highlight');
+                appendTerminalLine('  [+] Google Peer Bonus (Cohort 1): Instructor for Agent Cloud Upskilling Program, sharing technical expertise.');
+                appendTerminalLine('  [+] Google Peer Bonus (Owner): Created Apigee internal guides & demonstrations (Hybrid Guide, Model Armor Guide).');
+                appendTerminalLine('  [+] 5x Living Our Values (LOV) Awards at NatWest Group for excellence in project deliverables and reliability.');
+                break;
+
+            case 'cert':
+                appendTerminalLine('CERTIFICATIONS & ACADEMIC BACKGROUND:', 'highlight');
+                appendTerminalLine('  [+] Certification: Google Cloud Certified, Professional Cloud Architect');
+                appendTerminalLine('  [+] Education: B.Tech in Information Technology from Anna University (08/2017 - 06/2021) | Overall GPA: 8.91 / 10.00');
                 break;
 
             case 'clear':
@@ -175,16 +186,17 @@ function initTerminal() {
                 break;
 
             case 'matrix':
-                appendTerminalLine('Initiating cosmic data stream...', 'highlight');
+                appendTerminalLine('Synchronizing global AI Gateway data streams...', 'highlight');
                 for (let i = 0; i < 6; i++) {
-                    const hash = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-                    appendTerminalLine(`[STREAM ${i+1}/6] 0x${hash.toUpperCase()} -> SYNCHRONIZED`, 'response');
+                    const hash = Math.random().toString(16).substring(2, 10).toUpperCase();
+                    const latency = (Math.random() * 15 + 5).toFixed(1);
+                    appendTerminalLine(`[STREAM-${i+1}] APIGEE_SHARD_0x${hash} -> PII_REDACTED -> MODEL_ARMOR_PASS (${latency}ms)`, 'response');
                 }
-                appendTerminalLine('Matrix simulation complete.', 'highlight');
+                appendTerminalLine('Stream synchronization complete.', 'highlight');
                 break;
 
             default:
-                appendTerminalLine(`Command not recognized: "${raw}". Type "help" for valid syntax.`, 'error');
+                appendTerminalLine(`Command not recognized: "${raw}". Type "help" to view available career commands.`, 'error');
                 break;
         }
 
@@ -219,7 +231,6 @@ function initSkillsFilter() {
 
     filterButtons.forEach((btn) => {
         btn.addEventListener('click', () => {
-            // Remove active class from all
             filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
@@ -229,7 +240,6 @@ function initSkillsFilter() {
                 const cardCat = card.getAttribute('data-category');
                 if (targetCategory === 'all' || cardCat === targetCategory) {
                     card.style.display = 'flex';
-                    // Trigger reflow for animation
                     setTimeout(() => {
                         card.style.opacity = '1';
                         card.style.transform = 'translateY(0)';
@@ -247,7 +257,7 @@ function initSkillsFilter() {
 }
 
 /* ==========================================================================
-   4. Project Architecture Modal (Accessible & Safe DOM Manipulation)
+   4. Project Architecture Modal (Safe DOM Manipulation)
    ========================================================================== */
 function initProjectModals() {
     const modalOverlay = document.getElementById('project-modal');
@@ -261,30 +271,33 @@ function initProjectModals() {
 
     const projectData = {
         '1': {
-            title: 'Autonomous AI Agent Hub Specification',
-            architecture: 'Multi-tiered autonomous agent architecture utilizing high-frequency WebSocket event streams, consolidated memory buffers, and secure subagent task synthesis.',
+            title: 'Enterprise AI Gateways Specification (Prudential & GPN)',
+            architecture: 'Strategic AI Gateway architecture built on Google Cloud Apigee, providing a secure, multi-tenant governance layer for all enterprise LLM communications and Model Context Protocol (MCP) agents.',
             highlights: [
-                'Zero-latency real-time reactive wakeup without polling loops.',
-                'Subagent isolation for specialized codebase analysis and debugging.',
-                'Strict AST validation before executing dynamically synthesized tasks.'
+                'Sensitive Data Protection (SDP): Automatically inspects and redacts Personally Identifiable Information (PII) at the gateway before reaching external LLM providers.',
+                'Model Armor Integration: Out-of-the-box and custom JavaScript Apigee policies block prompt injections, jailbreaks, and enforce content safety boundaries.',
+                'Semantic Caching: High-intent query deduplication drastically reduces upstream LLM token costs and cuts response latencies.',
+                'MCP Governance: Specialized proxies securely expose, manage, and throttle Model Context Protocol servers for autonomous agent-to-tool interactions.'
             ]
         },
         '2': {
-            title: 'Premium Glassmorphism Calculator Spec',
-            architecture: 'Ultra-responsive single-page web app built with semantic HTML5, pure CSS custom variables, and vanilla JavaScript floating point math execution.',
+            title: 'Async Tree-Merge Data Pipeline Spec (SGX)',
+            architecture: 'High-performance asynchronous data pipeline utilizing Google Cloud Run and BigQuery compose to orchestrate parallel tree-merging of Google Cloud Storage (GCS) shards for massive-scale exports.',
             highlights: [
-                'Curated dark mode HSL palette with glassmorphism backdrop filters.',
-                'Floating micro-animations and neon accent buttons.',
-                'Robust error handling and precision floating point arithmetic.'
+                'Parallel Shard Processing: Tree-merging algorithm enables rapid consolidation of high-volume data exports without memory bottlenecks.',
+                'Application Integration & Apigee: Designed and deployed 10 integration flows and 10 Apigee proxies automating intraday and historical signed URL generation.',
+                'Infrastructure as Code (IaC): Authored comprehensive Terraform scripts to provision secure authentication profiles, client credentials, and Cloud Run authentication.',
+                'Onsite Technical Leadership: Authored Technical Design Document (TDD) and led onsite deployment fast-track in Singapore.'
             ]
         },
         '3': {
-            title: 'SecureCoder Zero-Trust Pipeline Spec',
-            architecture: 'Enterprise-grade security enforcement pipeline integrating automated vulnerability scanners, threat modeling, and strict Content Security Policy verification.',
+            title: 'Banking Microservices & Repo Automation Spec (NatWest)',
+            architecture: 'Enterprise Java backend architecture spanning AWS EKS and EC2 nodes, leveraging Spring Boot, Spring Scheduler, multithreading, and MongoDB aggregations.',
             highlights: [
-                'Zero-trust validation of all untrusted input payloads.',
-                'Automated prevention of XSS, SQL Injection, and Path Traversal.',
-                'Secure session hardening via HttpOnly and SameSite=Lax headers.'
+                'Automated Report Generation: Java multithreading and database locking prevented duplicates and reduced 2-3 days of manual effort.',
+                'Customer Verification API: Streamlined verification with 100% JUnit test coverage and secure Apigee API Gateway onboarding across 10+ APIs.',
+                'High-Speed Search & Chatbot: Google Custom Search microservice achieving < 300ms average response and generic OpenAI chatbot integration.',
+                'DevOps & Security Remediation: Automated migration of 250+ project repositories from Bitbucket to GitLab and upgraded systems against Log4j vulnerabilities.'
             ]
         }
     };
@@ -303,9 +316,9 @@ function initProjectModals() {
         modalBody.appendChild(pArch);
 
         const hHighlights = document.createElement('h4');
-        hHighlights.textContent = 'Key Engineering Highlights:';
+        hHighlights.textContent = 'Technical Implementation Details:';
         hHighlights.style.color = '#38bdf8';
-        hHighlights.style.marginTop = '12px';
+        hHighlights.style.marginTop = '14px';
         modalBody.appendChild(hHighlights);
 
         const ul = document.createElement('ul');
@@ -340,7 +353,6 @@ function initProjectModals() {
     if (btnClose) btnClose.addEventListener('click', closeModal);
     if (btnDone) btnDone.addEventListener('click', closeModal);
 
-    // Close on background click or Esc key
     modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) closeModal();
     });
@@ -356,31 +368,30 @@ function initProjectModals() {
    5. Real-Time Telemetry Simulation
    ========================================================================== */
 function initTelemetrySimulator() {
-    const cpuVal = document.getElementById('cpu-load-val');
-    const cpuBar = document.getElementById('cpu-load-bar');
-    const memVal = document.getElementById('memory-pool-val');
-    const memBar = document.getElementById('memory-pool-bar');
-    const netVal = document.getElementById('network-flux-val');
-    const netBar = document.getElementById('network-flux-bar');
+    const cacheVal = document.getElementById('cache-hit-val');
+    const cacheBar = document.getElementById('cache-hit-bar');
+    const threatVal = document.getElementById('threat-shield-val');
+    const threatBar = document.getElementById('threat-shield-bar');
+    const latencyVal = document.getElementById('gateway-latency-val');
+    const latencyBar = document.getElementById('gateway-latency-bar');
 
-    if (!cpuVal || !cpuBar) return;
+    if (!cacheVal || !cacheBar) return;
 
     setInterval(() => {
-        // Simulate minor telemetry variations
-        const newCpu = Math.floor(28 + Math.random() * 20);
-        cpuVal.textContent = `${newCpu}%`;
-        cpuBar.style.width = `${newCpu}%`;
+        const newCache = Math.floor(82 + Math.random() * 12);
+        cacheVal.textContent = `${newCache}%`;
+        cacheBar.style.width = `${newCache}%`;
 
-        const newMem = Math.floor(58 + Math.random() * 12);
-        if (memVal && memBar) {
-            memVal.textContent = `${newMem}%`;
-            memBar.style.width = `${newMem}%`;
+        const newThreat = (99.95 + Math.random() * 0.04).toFixed(2);
+        if (threatVal && threatBar) {
+            threatVal.textContent = `${newThreat}%`;
+            threatBar.style.width = `100%`;
         }
 
-        const newNet = (1.1 + Math.random() * 0.5).toFixed(2);
-        if (netVal && netBar) {
-            netVal.textContent = `${newNet} Gbps`;
-            netBar.style.width = `${Math.min(100, newNet * 50)}%`;
+        const newLatency = (12 + Math.random() * 6).toFixed(1);
+        if (latencyVal && latencyBar) {
+            latencyVal.textContent = `${newLatency} ms`;
+            latencyBar.style.width = `${Math.min(100, newLatency * 2.5)}%`;
         }
     }, 3500);
 }
