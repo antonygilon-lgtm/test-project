@@ -3,48 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Calculator</title>
-    <meta name="description" content="A sleek, premium calculator with glassmorphism design.">
+    <title>Welcome to Antony Gilon's Space | Software Engineer & Innovator</title>
+    <meta name="description" content="Welcome to Antony Gilon's Space. Explore interactive projects, cutting-edge software engineering skills, and futuristic web designs in this digital cosmos.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background-gradient"></div>
-    <div class="glass-container">
-        <div class="calculator">
-            <div class="display-container">
-                <div id="previous-operand" class="previous-operand"></div>
-                <div id="current-operand" class="current-operand">0</div>
+    <!-- Interactive Background Canvas -->
+    <canvas id="starfield-canvas"></canvas>
+    
+    <!-- Background Gradient Orbs -->
+    <div class="background-orbs" aria-hidden="true">
+        <div class="orb orb-cyan"></div>
+        <div class="orb orb-purple"></div>
+        <div class="orb orb-pink"></div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="glass-navbar" id="main-header">
+        <nav class="nav-container">
+            <a href="#hero-section" class="brand-logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">Antony<span class="gradient-accent">.Space</span></span>
+            </a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#hero-section" class="nav-link">Mission Control</a></li>
+                <li><a href="#terminal-section" class="nav-link">GilonOS Terminal</a></li>
+                <li><a href="#skills-section" class="nav-link">Tech Radar</a></li>
+                <li><a href="#projects-section" class="nav-link">Expeditions</a></li>
+                <li><a href="#telemetry-section" class="nav-link">Telemetry</a></li>
+                <li><a href="#contact-section" class="nav-link btn-connect">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero-section" class="hero-section">
+            <div class="hero-content">
+                <div class="status-badge" id="live-status">
+                    <span class="pulse-dot"></span>
+                    <span class="status-text">MISSION STATUS: LIVE & EXPLORING FRONTIERS</span>
+                </div>
+                <h1 class="hero-title">
+                    Welcome to <span class="gradient-text">Antony Gilon's</span> Space
+                </h1>
+                <p class="hero-subtitle">
+                    Architecting high-performance agentic systems, secure full-stack software, and visually captivating digital dimensions. Step into the command center where engineering meets cosmic imagination.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects-section" class="btn btn-primary" id="btn-explore-projects">
+                        <span>Explore Expeditions</span>
+                        <span class="btn-icon">⚡</span>
+                    </a>
+                    <a href="#terminal-section" class="btn btn-secondary" id="btn-launch-terminal">
+                        <span>Launch GilonOS</span>
+                        <span class="btn-icon">💻</span>
+                    </a>
+                </div>
+                <!-- Quick Stats Banner -->
+                <div class="stats-banner" id="stats-banner">
+                    <div class="stat-card">
+                        <span class="stat-value" id="stat-systems">99.9%</span>
+                        <span class="stat-label">System Reliability</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="stat-latency">&lt; 1ms</span>
+                        <span class="stat-label">Neural Latency</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="stat-projects">10+</span>
+                        <span class="stat-label">Active Modules</span>
+                    </div>
+                </div>
             </div>
-            <div class="buttons">
-                <button id="btn-clear" class="btn btn-special" onclick="clearDisplay()">C</button>
-                <button id="btn-plus-minus" class="btn btn-special" onclick="toggleSign()">+/-</button>
-                <button id="btn-percent" class="btn btn-special" onclick="percent()">%</button>
-                <button id="btn-divide" class="btn btn-operator" onclick="appendOperator('/')">÷</button>
-                
-                <button id="btn-7" class="btn" onclick="appendNumber('7')">7</button>
-                <button id="btn-8" class="btn" onclick="appendNumber('8')">8</button>
-                <button id="btn-9" class="btn" onclick="appendNumber('9')">9</button>
-                <button id="btn-multiply" class="btn btn-operator" onclick="appendOperator('*')">×</button>
-                
-                <button id="btn-4" class="btn" onclick="appendNumber('4')">4</button>
-                <button id="btn-5" class="btn" onclick="appendNumber('5')">5</button>
-                <button id="btn-6" class="btn" onclick="appendNumber('6')">6</button>
-                <button id="btn-subtract" class="btn btn-operator" onclick="appendOperator('-')">−</button>
-                
-                <button id="btn-1" class="btn" onclick="appendNumber('1')">1</button>
-                <button id="btn-2" class="btn" onclick="appendNumber('2')">2</button>
-                <button id="btn-3" class="btn" onclick="appendNumber('3')">3</button>
-                <button id="btn-add" class="btn btn-operator" onclick="appendOperator('+')">+</button>
-                
-                <button id="btn-0" class="btn btn-zero" onclick="appendNumber('0')">0</button>
-                <button id="btn-dot" class="btn" onclick="appendNumber('.')">.</button>
-                <button id="btn-equals" class="btn btn-operator btn-equals" onclick="compute()">=</button>
+            <div class="hero-visual">
+                <div class="avatar-glass-ring">
+                    <img src="assets/antony_space_avatar.jpg" alt="Antony Gilon Cyber Astronaut Emblem" class="hero-avatar-img">
+                    <div class="ring-pulse"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Terminal Simulator Section -->
+        <section id="terminal-section" class="terminal-section">
+            <div class="section-header">
+                <h2 class="section-title"><span class="title-index">01 //</span> GilonOS Command Center</h2>
+                <p class="section-description">Interact directly with my virtual engineering operating system using safe terminal commands.</p>
+            </div>
+            
+            <div class="terminal-container glass-panel" id="interactive-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control red"></span>
+                        <span class="control yellow"></span>
+                        <span class="control green"></span>
+                    </div>
+                    <div class="terminal-title">gilon-os@quantum-kernel ~ (v2.6.4)</div>
+                    <div class="terminal-status-chip">SECURE SHELL</div>
+                </div>
+                <div class="terminal-quick-chips" id="command-chips">
+                    <span class="cmd-chip" data-command="help">help</span>
+                    <span class="cmd-chip" data-command="bio">bio</span>
+                    <span class="cmd-chip" data-command="skills">skills</span>
+                    <span class="cmd-chip" data-command="projects">projects</span>
+                    <span class="cmd-chip" data-command="status">status</span>
+                    <span class="cmd-chip" data-command="clear">clear</span>
+                </div>
+                <div class="terminal-body" id="terminal-screen">
+                    <!-- Dynamic terminal outputs generated safely by JS -->
+                </div>
+                <div class="terminal-input-bar">
+                    <span class="prompt-symbol">antony@space:~$</span>
+                    <input type="text" id="terminal-input" class="terminal-input" placeholder="Type a command (e.g. 'help' or 'bio')..." autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Tech Radar Section -->
+        <section id="skills-section" class="skills-section">
+            <div class="section-header">
+                <h2 class="section-title"><span class="title-index">02 //</span> Technical Radar & Mastery</h2>
+                <p class="section-description">A multi-layered matrix of systems engineering, cloud architecture, and security practices.</p>
+            </div>
+
+            <div class="skills-filter-container" id="skills-filter">
+                <button class="filter-btn active" data-category="all">All Modules</button>
+                <button class="filter-btn" data-category="core">Core Engineering</button>
+                <button class="filter-btn" data-category="ai">AI & Agentic Systems</button>
+                <button class="filter-btn" data-category="security">Cloud & Security</button>
+                <button class="filter-btn" data-category="ui">Modern UI/UX</button>
+            </div>
+
+            <div class="skills-grid" id="skills-grid">
+                <!-- Skill cards injected or enhanced via safe DOM methods -->
+                <div class="skill-card glass-panel" data-category="core">
+                    <div class="skill-icon">⚡</div>
+                    <div class="skill-info">
+                        <h3 class="skill-name">Distributed Systems Architecture</h3>
+                        <p class="skill-desc">Designing fault-tolerant, high-throughput microservices and concurrent data streams.</p>
+                        <div class="skill-progress-bar">
+                            <div class="progress-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-level">Mastery: 95%</span>
+                </div>
+
+                <div class="skill-card glass-panel" data-category="ai">
+                    <div class="skill-icon">🧠</div>
+                    <div class="skill-info">
+                        <h3 class="skill-name">Agentic AI & Orchestration</h3>
+                        <p class="skill-desc">Building autonomous agent workflows, secure tool synthesis, and neural planning loops.</p>
+                        <div class="skill-progress-bar">
+                            <div class="progress-fill" style="width: 96%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-level">Mastery: 96%</span>
+                </div>
+
+                <div class="skill-card glass-panel" data-category="security">
+                    <div class="skill-icon">🔒</div>
+                    <div class="skill-info">
+                        <h3 class="skill-name">Secure Web & Backend Hardening</h3>
+                        <p class="skill-desc">Implementing strict CSP, robust authentication mechanisms, and OWASP zero-trust defenses.</p>
+                        <div class="skill-progress-bar">
+                            <div class="progress-fill" style="width: 98%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-level">Mastery: 98%</span>
+                </div>
+
+                <div class="skill-card glass-panel" data-category="core">
+                    <div class="skill-icon">🛠️</div>
+                    <div class="skill-info">
+                        <h3 class="skill-name">Modern Python & Go & TypeScript</h3>
+                        <p class="skill-desc">Writing clean, idiomatic, and highly optimized server-side logic and APIs.</p>
+                        <div class="skill-progress-bar">
+                            <div class="progress-fill" style="width: 94%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-level">Mastery: 94%</span>
+                </div>
+
+                <div class="skill-card glass-panel" data-category="ui">
+                    <div class="skill-icon">✨</div>
+                    <div class="skill-info">
+                        <h3 class="skill-name">Glassmorphism & Dynamic UI</h3>
+                        <p class="skill-desc">Crafting responsive, visually stunning web experiences with fluid micro-animations.</p>
+                        <div class="skill-progress-bar">
+                            <div class="progress-fill" style="width: 92%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-level">Mastery: 92%</span>
+                </div>
+
+                <div class="skill-card glass-panel" data-category="security">
+                    <div class="skill-icon">☁️</div>
+                    <div class="skill-info">
+                        <h3 class="skill-name">Cloud Native & CI/CD Pipelines</h3>
+                        <p class="skill-desc">Automated deployments, container orchestration, and real-time observability.</p>
+                        <div class="skill-progress-bar">
+                            <div class="progress-fill" style="width: 91%;"></div>
+                        </div>
+                    </div>
+                    <span class="skill-level">Mastery: 91%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects & Expeditions Section -->
+        <section id="projects-section" class="projects-section">
+            <div class="section-header">
+                <h2 class="section-title"><span class="title-index">03 //</span> Cosmic Expeditions & Projects</h2>
+                <p class="section-description">High-impact engineering deliverables built for performance, security, and elegance.</p>
+            </div>
+
+            <div class="projects-grid" id="projects-grid">
+                <!-- Project Card 1 -->
+                <article class="project-card glass-panel" id="project-card-1">
+                    <div class="project-img-wrapper">
+                        <img src="assets/project_ai_hub.jpg" alt="Autonomous AI Agent Hub Dashboard" class="project-img">
+                        <div class="project-tag">AI / ORCHESTRATION</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Autonomous AI Agent Hub</h3>
+                        <p class="project-summary">A state-of-the-art multi-agent orchestration framework with real-time telemetry, memory consolidation, and secure subagent task synthesis.</p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Agent API</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">Secure Guard</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-card-action" data-project-id="1">Explore Architecture</button>
+                            <a href="https://github.com/antonygilon-lgtm/test-project" target="_blank" rel="noopener noreferrer" class="btn btn-card-link">GitHub Repo ↗</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 2 -->
+                <article class="project-card glass-panel" id="project-card-2">
+                    <div class="project-img-wrapper">
+                        <div class="project-mockup-bg mockup-calculator">
+                            <div class="calc-preview-text">98.6 × 10<sup>4</sup></div>
+                        </div>
+                        <div class="project-tag">UI/UX / GLASSMORPHISM</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Premium Glassmorphism Calculator</h3>
+                        <p class="project-summary">An ultra-sleek web calculator demonstrating responsive vanilla CSS variables, glowing neon gradients, and flawless floating micro-animations.</p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Vanilla JS</span>
+                            <span class="tech-tag">CSS3 Variables</span>
+                            <span class="tech-tag">Backdrop-Filter</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-card-action" data-project-id="2">Explore Architecture</button>
+                            <a href="https://github.com/antonygilon-lgtm/test-project" target="_blank" rel="noopener noreferrer" class="btn btn-card-link">GitHub Repo ↗</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article class="project-card glass-panel" id="project-card-3">
+                    <div class="project-img-wrapper">
+                        <div class="project-mockup-bg mockup-security">
+                            <div class="security-shield-icon">🛡️</div>
+                            <div class="security-preview-text">ZERO-TRUST SECURE</div>
+                        </div>
+                        <div class="project-tag">CYBERSECURITY / BFF</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SecureCoder Zero-Trust Pipeline</h3>
+                        <p class="project-summary">End-to-end automated vulnerability scanning and remediation engine enforcing strict CSP, XSS sanitization, and secure session management.</p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Security Architecture</span>
+                            <span class="tech-tag">AST Scanning</span>
+                            <span class="tech-tag">Argon2 / KMS</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-card-action" data-project-id="3">Explore Architecture</button>
+                            <a href="https://github.com/antonygilon-lgtm/test-project" target="_blank" rel="noopener noreferrer" class="btn btn-card-link">GitHub Repo ↗</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Live Telemetry Section -->
+        <section id="telemetry-section" class="telemetry-section">
+            <div class="section-header">
+                <h2 class="section-title"><span class="title-index">04 //</span> Real-Time Station Telemetry</h2>
+                <p class="section-description">Interactive live vitals simulated directly from the space core matrix.</p>
+            </div>
+
+            <div class="telemetry-grid">
+                <div class="telemetry-card glass-panel">
+                    <div class="telemetry-header">
+                        <span class="telemetry-label">CPU CORE LOAD</span>
+                        <span class="telemetry-status ok">NOMINAL</span>
+                    </div>
+                    <div class="telemetry-gauge">
+                        <span class="gauge-number" id="cpu-load-val">34%</span>
+                        <div class="gauge-bar-bg">
+                            <div class="gauge-bar-fill" id="cpu-load-bar" style="width: 34%;"></div>
+                        </div>
+                    </div>
+                    <p class="telemetry-footer">Quantum cores operating at peak frequency.</p>
+                </div>
+
+                <div class="telemetry-card glass-panel">
+                    <div class="telemetry-header">
+                        <span class="telemetry-label">NEURAL MEMORY POOL</span>
+                        <span class="telemetry-status ok">OPTIMIZED</span>
+                    </div>
+                    <div class="telemetry-gauge">
+                        <span class="gauge-number" id="memory-pool-val">62%</span>
+                        <div class="gauge-bar-bg">
+                            <div class="gauge-bar-fill purple-fill" id="memory-pool-bar" style="width: 62%;"></div>
+                        </div>
+                    </div>
+                    <p class="telemetry-footer">Consolidated context buffers active.</p>
+                </div>
+
+                <div class="telemetry-card glass-panel">
+                    <div class="telemetry-header">
+                        <span class="telemetry-label">COSMIC NETWORK FLUX</span>
+                        <span class="telemetry-status ok">STABLE</span>
+                    </div>
+                    <div class="telemetry-gauge">
+                        <span class="gauge-number" id="network-flux-val">1.2 Gbps</span>
+                        <div class="gauge-bar-bg">
+                            <div class="gauge-bar-fill pink-fill" id="network-flux-bar" style="width: 78%;"></div>
+                        </div>
+                    </div>
+                    <p class="telemetry-footer">Encrypted interstellar data throughput.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="contact-section">
+            <div class="contact-box glass-panel">
+                <div class="contact-header">
+                    <span class="contact-badge">🛸 ESTABLISH COMMS</span>
+                    <h2 class="contact-title">Ready to Launch Your Next Odyssey?</h2>
+                    <p class="contact-desc">Whether you want to architect groundbreaking software, collaborate on AI innovations, or connect in digital space, transmission frequencies are open.</p>
+                </div>
+                <div class="contact-links-grid">
+                    <a href="https://github.com/antonygilon-lgtm" target="_blank" rel="noopener noreferrer" class="contact-item">
+                        <span class="contact-icon">🐙</span>
+                        <div class="contact-text">
+                            <span class="contact-label">GitHub Space</span>
+                            <span class="contact-value">github.com/antonygilon-lgtm</span>
+                        </div>
+                    </a>
+                    <a href="mailto:antonygilon@google.com" class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div class="contact-text">
+                            <span class="contact-label">Subspace Email</span>
+                            <span class="contact-value">antonygilon@google.com</span>
+                        </div>
+                    </a>
+                    <a href="#hero-section" class="contact-item">
+                        <span class="contact-icon">🛰️</span>
+                        <div class="contact-text">
+                            <span class="contact-label">Station Coordinates</span>
+                            <span class="contact-value">Sector 7G // Earth Orbit</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">🚀 Antony Gilon's Space</span>
+                <p class="footer-tagline">Architected with secure vanilla craftsmanship, neon aesthetics, and cosmic passion.</p>
+            </div>
+            <div class="footer-meta">
+                <span>© 2026 Antony Gilon. All rights reserved across all quadrants.</span>
+                <span class="footer-status">⚡ Hosted on GitHub Pages</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Accessible Project Detail Modal (No native alert/prompt!) -->
+    <div id="project-modal" class="custom-modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="custom-modal glass-panel">
+            <div class="modal-header">
+                <h3 id="modal-title" class="modal-title-text">Architecture Specification</h3>
+                <button id="btn-close-modal" class="btn-close" aria-label="Close modal">✕</button>
+            </div>
+            <div id="modal-body" class="modal-body">
+                <!-- Safely injected by JS -->
+            </div>
+            <div class="modal-footer">
+                <button id="btn-modal-done" class="btn btn-primary">Close Transmission</button>
             </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
