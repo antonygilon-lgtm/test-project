@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillsFilter();
     initProjectModals();
     initTelemetrySimulator();
+    initBase64Switcher();
 });
 
 /* ==========================================================================
@@ -395,4 +396,31 @@ function initTelemetrySimulator() {
         }
     }, 3500);
 }
+
+/* ==========================================================================
+   6. Interactive Base64 Animated Hologram Switcher
+   ========================================================================== */
+function initBase64Switcher() {
+    const displayImg = document.getElementById('hero-animated-display');
+    const btnCyber = document.getElementById('btn-anim-cyber');
+    const btnPhoto = document.getElementById('btn-anim-photo');
+
+    if (!displayImg || !btnCyber || !btnPhoto) return;
+
+    function showCyber() {
+        displayImg.src = 'assets/antony_animated_logo.svg?v=3.0.5';
+        btnCyber.classList.add('active');
+        btnPhoto.classList.remove('active');
+    }
+
+    function showPhoto() {
+        displayImg.src = 'assets/antony_animated_photo.svg?v=3.0.5';
+        btnPhoto.classList.add('active');
+        btnCyber.classList.remove('active');
+    }
+
+    btnCyber.addEventListener('click', showCyber);
+    btnPhoto.addEventListener('click', showPhoto);
+}
+
 
