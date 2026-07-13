@@ -5,7 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antony Gilon | Strategic Cloud Engineer & AI Gateway Architect</title>
     <meta name="description" content="Explore the digital space of Antony Gilon, Strategic Cloud Engineer at Google Cloud specializing in Apigee, AI Gateways, Model Context Protocol (MCP), and Java Backend engineering.">
-    <link rel="stylesheet" href="style.css?v=3.0.1">
+    
+    <!-- Favicons & Google Search Logo -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+
+    <!-- Open Graph & Social Previews -->
+    <meta property="og:title" content="Antony Gilon | Strategic Cloud Engineer & AI Gateway Architect">
+    <meta property="og:description" content="Explore the digital space of Antony Gilon, Strategic Cloud Engineer at Google Cloud specializing in Apigee, AI Gateways, Model Context Protocol (MCP), and Java Backend engineering.">
+    <meta property="og:image" content="https://antonygilon.com/assets/og_image.png">
+    <meta property="og:url" content="https://antonygilon.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Antony Gilon | Strategic Cloud Engineer">
+    <meta name="twitter:description" content="Strategic Cloud Engineer @ Google Cloud. AI Gateways, Apigee & MCP Architect.">
+    <meta name="twitter:image" content="https://antonygilon.com/assets/og_image.png">
+
+    <!-- Google Search Structured Data (JSON-LD) for Logo & Profile Indexing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Antony Gilon",
+      "url": "https://antonygilon.com",
+      "image": "https://antonygilon.com/assets/favicon-192x192.png",
+      "jobTitle": "Strategic Cloud Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Google Cloud"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/antony-gilon-252210417/",
+        "https://github.com/antonygilon-lgtm"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Antony Gilon's Space",
+      "url": "https://antonygilon.com",
+      "description": "Strategic Cloud Engineer & AI Gateway Architect Space",
+      "publisher": {
+        "@type": "Person",
+        "name": "Antony Gilon",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://antonygilon.com/assets/favicon-192x192.png"
+        }
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css?v=3.0.2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
@@ -84,9 +139,31 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="avatar-glass-ring">
-                    <img src="assets/antony_space_avatar.jpg" alt="Antony Gilon Cyber Astronaut Emblem" class="hero-avatar-img">
-                    <div class="ring-pulse"></div>
+                <div class="avatar-card-container" id="hero-avatar-container">
+                    <div class="avatar-card-inner" id="avatar-card-flipper">
+                        <!-- Front Face: Authentic Profile Photo -->
+                        <div class="avatar-face avatar-front">
+                            <div class="avatar-glass-ring">
+                                <img src="assets/antony_photo.png" alt="Antony Gilon Profile Photo" class="hero-avatar-img">
+                                <div class="ring-pulse"></div>
+                                <div class="avatar-scan-line"></div>
+                            </div>
+                            <span class="avatar-label-tag">Authentic Profile</span>
+                        </div>
+                        <!-- Back Face: Animated Cyber-Astronaut Logo -->
+                        <div class="avatar-face avatar-back">
+                            <div class="avatar-glass-ring cyber-ring-glow">
+                                <img src="assets/antony_cyber_logo.jpg" alt="Antony Gilon Cyber Astronaut Emblem" class="hero-avatar-img">
+                                <div class="ring-pulse pulse-cyan"></div>
+                                <div class="avatar-scan-line scan-cyan"></div>
+                            </div>
+                            <span class="avatar-label-tag tag-cyan">Cyber Dev Emblem</span>
+                        </div>
+                    </div>
+                    <div class="avatar-toggle-controls">
+                        <button class="avatar-btn active" id="btn-show-photo" aria-label="Show authentic profile photo">Profile Photo</button>
+                        <button class="avatar-btn" id="btn-show-cyber" aria-label="Show cyber astronaut emblem">Sci-Fi Emblem</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -424,6 +501,6 @@
         </div>
     </div>
 
-    <script src="script.js?v=3.0.1"></script>
+    <script src="script.js?v=3.0.2"></script>
 </body>
 </html>
