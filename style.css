@@ -1198,6 +1198,11 @@ main {
 
 @media (max-width: 768px) {
     /* Navbar Mobile Adaptation */
+    .glass-navbar {
+        height: 70px;
+        background: rgba(7, 11, 20, 0.95);
+    }
+
     .nav-container {
         padding: 0 16px;
     }
@@ -1232,7 +1237,7 @@ main {
 
     /* Main body padding adjustments for bottom navigation */
     main {
-        padding: 80px 16px 90px;
+        padding: 110px 16px 90px;
         gap: 56px;
         width: 100%;
         max-width: 100vw;
@@ -1442,8 +1447,12 @@ main {
 }
 
 @media (max-width: 480px) {
+    .glass-navbar {
+        height: 65px;
+    }
+
     main {
-        padding: 70px 12px 90px;
+        padding: 105px 12px 90px;
         gap: 48px;
     }
 
