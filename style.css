@@ -1232,14 +1232,18 @@ main {
 
     /* Main body padding adjustments for bottom navigation */
     main {
-        padding: 90px 16px 90px;
-        gap: 64px;
+        padding: 80px 16px 90px;
+        gap: 56px;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
     
     /* Hero adjustments */
     .hero-title {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
         line-height: 1.2;
+        word-break: break-word;
     }
     
     .hero-subtitle {
@@ -1249,6 +1253,7 @@ main {
     .hero-animated-svg {
         width: 280px;
         height: 280px;
+        max-width: 100%;
     }
     
     .hero-actions {
@@ -1262,7 +1267,8 @@ main {
 
     /* Section Titles */
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
+        word-break: break-word;
     }
     
     .section-description {
@@ -1272,19 +1278,27 @@ main {
     /* Terminal Mobile Layout */
     .terminal-container {
         border-radius: 16px;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
     }
 
     .terminal-header {
-        padding: 12px 16px;
+        padding: 12px 14px;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
     .terminal-title {
         font-size: 0.75rem;
+        word-break: break-all;
     }
 
     .terminal-quick-chips {
-        padding: 10px 14px;
+        padding: 10px 12px;
         gap: 6px;
+        justify-content: center;
     }
 
     .cmd-chip {
@@ -1293,16 +1307,18 @@ main {
     }
 
     .terminal-body {
-        padding: 16px;
-        min-height: 250px;
+        padding: 14px;
+        min-height: 240px;
         max-height: 340px;
         font-size: 0.85rem;
         gap: 10px;
+        overflow-x: hidden;
     }
 
     .terminal-input-bar {
         padding: 12px 14px;
         gap: 8px;
+        flex-wrap: wrap;
     }
 
     .prompt-symbol {
@@ -1311,20 +1327,45 @@ main {
 
     .terminal-input {
         font-size: 0.88rem;
+        width: 100%;
+        min-width: 0;
     }
 
-    /* Grids stack nicely on mobile */
+    /* Grids strictly constrained to mobile viewport with zero overflow */
     .skills-grid,
     .projects-grid,
     .telemetry-grid,
     .contact-links-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Cards strictly constrained */
+    .skill-card,
+    .project-card,
+    .telemetry-card,
+    .contact-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        padding: 20px !important;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .project-content {
+        padding: 20px !important;
     }
 
     .skills-filter-container {
         gap: 8px;
         justify-content: center;
+        width: 100%;
     }
 
     .filter-btn {
@@ -1334,24 +1375,28 @@ main {
 
     .project-img-wrapper {
         height: 180px;
+        width: 100%;
     }
 
     /* Contact Box Mobile */
     .contact-box {
-        padding: 32px 16px;
-        gap: 24px;
+        padding: 28px 16px !important;
+        gap: 20px;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
     
     .contact-title {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
+        word-break: break-word;
     }
     
     .contact-desc {
-        font-size: 1rem;
+        font-size: 0.98rem;
     }
 
     .contact-item {
-        padding: 14px;
         gap: 12px;
     }
 
@@ -1359,16 +1404,19 @@ main {
         width: 42px;
         height: 42px;
         font-size: 1.5rem;
+        flex-shrink: 0;
     }
 
     .contact-value {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
         word-break: break-all;
     }
 
     /* Footer Mobile */
     .glass-footer {
-        padding: 32px 16px 80px; /* Extra bottom padding so mobile nav bar doesn't cover */
+        padding: 32px 16px 80px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .footer-content {
@@ -1385,6 +1433,7 @@ main {
     .custom-modal {
         padding: 20px;
         max-height: 80vh;
+        width: 95% !important;
     }
 
     .modal-title-text {
@@ -1393,8 +1442,13 @@ main {
 }
 
 @media (max-width: 480px) {
+    main {
+        padding: 70px 12px 90px;
+        gap: 48px;
+    }
+
     .hero-title {
-        font-size: 1.95rem;
+        font-size: 1.85rem;
     }
 
     .status-badge {
@@ -1408,15 +1462,38 @@ main {
     }
 
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
     }
 
     .terminal-quick-chips {
         justify-content: center;
     }
 
+    .stats-banner {
+        gap: 14px;
+        width: 100%;
+    }
+
     .stat-card {
-        width: 45%;
+        width: 100% !important;
+        max-width: 100% !important;
         text-align: center;
+        box-sizing: border-box;
+    }
+
+    .skill-card,
+    .project-card,
+    .project-content,
+    .telemetry-card,
+    .contact-item {
+        padding: 16px !important;
+    }
+
+    .gauge-number {
+        font-size: 2.1rem;
+    }
+
+    .mockup-calculator .calc-preview-text {
+        font-size: 1.8rem;
     }
 }
