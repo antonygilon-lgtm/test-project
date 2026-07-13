@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Circular clip path for the portrait -->
+    <clipPath id="avatar-clip">
+      <circle cx="250" cy="250" r="165" />
+    </clipPath>
+    <clipPath id="inner-clip">
+      <circle cx="250" cy="250" r="158" />
+    </clipPath>
+
+    <!-- Neon Gradients -->
+    <linearGradient id="cyan-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+
+    <linearGradient id="purple-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+
+    <linearGradient id="scan-laser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(56, 189, 248, 0)" />
+      <stop offset="50%" stop-color="rgba(56, 189, 248, 0.9)" />
+      <stop offset="100%" stop-color="rgba(56, 189, 248, 0)" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Space Atmosphere -->
+  <circle cx="250" cy="250" r="235" fill="rgba(7, 11, 20, 0.85)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="2" />
+
+  <!-- Outer Pulsing Cyber Ring -->
+  <circle cx="250" cy="250" r="220" fill="none" stroke="url(#cyan-blue)" stroke-width="3" filter="url(#neon-glow)" opacity="0.6">
+    <animate attributeName="r" values="218;223;218" dur="4s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Rotating Dashed Telemetry Ring 1 (Clockwise) -->
+  <circle cx="250" cy="250" r="205" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="40 15 15 15 60 20" opacity="0.75">
+    <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="25s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Rotating Dashed Telemetry Ring 2 (Counter-Clockwise) -->
+  <circle cx="250" cy="250" r="190" fill="none" stroke="#a78bfa" stroke-width="2" stroke-dasharray="25 10 50 15 10 15" opacity="0.65">
+    <animateTransform attributeName="transform" type="rotate" from="360 250 250" to="0 250 250" dur="18s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Rotating Tech Arc Ring 3 (Fast Clockwise) -->
+  <circle cx="250" cy="250" r="175" fill="none" stroke="url(#purple-pink)" stroke-width="4" stroke-dasharray="80 200 40 100" filter="url(#neon-glow)">
+    <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="12s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Base Dark Ring around Portrait -->
+  <circle cx="250" cy="250" r="168" fill="#0a0e1a" stroke="rgba(255, 255, 255, 0.2)" stroke-width="3" />
+
+  <!-- Embedded Authentic Portrait (Animated with subtle breathing zoom) -->
+  <g clip-path="url(#avatar-clip)">
+    <image href="antony_photo.png" x="80" y="80" width="340" height="340" preserveAspectRatio="xMidYMid slice">
+      <animateTransform attributeName="transform" type="scale" values="1;1.03;1" transform-origin="250 250" dur="6s" repeatCount="indefinite" />
+    </image>
+  </g>
+
+  <!-- Animated Laser Scan Beam Traversing Across Portrait -->
+  <g clip-path="url(#inner-clip)">
+    <!-- Cyan Neon Scan Line -->
+    <rect x="80" y="80" width="340" height="5" fill="url(#scan-laser)" filter="url(#neon-glow)">
+      <animate attributeName="y" values="90;410;90" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.95;0.3" dur="5s" repeatCount="indefinite" />
+    </rect>
+    <!-- Subtle Holographic Cyan Tint Sweep -->
+    <rect x="80" y="80" width="340" height="40" fill="rgba(56, 189, 248, 0.15)" opacity="0.4">
+      <animate attributeName="y" values="80;390;80" dur="5s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- Orbiting Sci-Fi Nodes & Sparks -->
+  <g>
+    <!-- Node 1 Cyan -->
+    <circle cx="250" cy="45" r="6" fill="#38bdf8" filter="url(#neon-glow)">
+      <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="10s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 2 Purple -->
+    <circle cx="250" cy="45" r="5" fill="#f472b6" filter="url(#neon-glow)">
+      <animateTransform attributeName="transform" type="rotate" from="180 250 250" to="540 250 250" dur="14s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 3 Emerald -->
+    <circle cx="250" cy="60" r="4" fill="#10b981" filter="url(#neon-glow)">
+      <animateTransform attributeName="transform" type="rotate" from="90 250 250" to="450 250 250" dur="8s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Futuristic Hud Framing Corners -->
+  <path d="M 120 70 L 150 70" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M 380 70 L 350 70" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M 120 430 L 150 430" stroke="#f472b6" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M 380 430 L 350 430" stroke="#f472b6" stroke-width="3" stroke-linecap="round" fill="none" />
+</svg>

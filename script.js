@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillsFilter();
     initProjectModals();
     initTelemetrySimulator();
-    initAvatarFlipper();
 });
 
 /* ==========================================================================
@@ -395,40 +394,5 @@ function initTelemetrySimulator() {
             latencyBar.style.width = `${Math.min(100, newLatency * 2.5)}%`;
         }
     }, 3500);
-}
-
-/* ==========================================================================
-   6. Interactive Dual-Avatar Card Flipper (Profile Photo <-> Cyber Emblem)
-   ========================================================================== */
-function initAvatarFlipper() {
-    const flipper = document.getElementById('avatar-card-flipper');
-    const btnPhoto = document.getElementById('btn-show-photo');
-    const btnCyber = document.getElementById('btn-show-cyber');
-
-    if (!flipper || !btnPhoto || !btnCyber) return;
-
-    function showPhoto() {
-        flipper.classList.remove('flipped');
-        btnPhoto.classList.add('active');
-        btnCyber.classList.remove('active');
-    }
-
-    function showCyber() {
-        flipper.classList.add('flipped');
-        btnCyber.classList.add('active');
-        btnPhoto.classList.remove('active');
-    }
-
-    // Toggle on card click
-    flipper.addEventListener('click', () => {
-        if (flipper.classList.contains('flipped')) {
-            showPhoto();
-        } else {
-            showCyber();
-        }
-    });
-
-    btnPhoto.addEventListener('click', showPhoto);
-    btnCyber.addEventListener('click', showCyber);
 }
 
