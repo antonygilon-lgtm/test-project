@@ -64,7 +64,7 @@
 
   <!-- Embedded Authentic Portrait (Animated with subtle breathing zoom) -->
   <g clip-path="url(#avatar-clip)">
-    <image href="antony_photo.png" x="80" y="80" width="340" height="340" preserveAspectRatio="xMidYMid slice">
+    <image href="antony_cyber_logo.jpg" x="80" y="80" width="340" height="340" preserveAspectRatio="xMidYMid slice">
       <animateTransform attributeName="transform" type="scale" values="1;1.03;1" transform-origin="250 250" dur="6s" repeatCount="indefinite" />
     </image>
   </g>
